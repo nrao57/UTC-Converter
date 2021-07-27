@@ -1,5 +1,10 @@
 # UTC-Converter
 
+## Build jar from Maven Project
+```
+mvn package
+```
+
 ## To convert from GMT ISO 8601 to UTC Seconds
 
 ```
