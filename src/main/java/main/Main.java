@@ -20,15 +20,20 @@ public class Main {
 
         TimeZoneEnum tz = TimeZoneEnum.valueOf(args[1]);
 
-    String tsMillis = convertDatetimeToMillis(ParseISOTimestamp(args[0], tz));
+    Long tsSeconds = convertMillisToSeconds(convertDatetimeToMillis(ParseISOTimestamp(args[0], tz)));
 
-    System.out.println(tsMillis);
+    System.out.println(tsSeconds);
 
   }
 
-  public static String convertDatetimeToMillis(DateTime dt){
-      return Long.toString(dt.getMillis());
+  public static Long convertDatetimeToMillis(DateTime dt){
+      return dt.getMillis();
   }
+
+  public static Long convertMillisToSeconds(Long millis){
+        return millis / 1000;
+  }
+
 
   public static DateTime ParseISOTimestamp(String ISOTimeString, TimeZoneEnum tz) {
     /*
